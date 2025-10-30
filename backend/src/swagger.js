@@ -7,7 +7,7 @@ const options = {
     info: {
       title: ' Savings Management System API',
       version: '1.0.0',
-      description: 'API documentation for Admin backends',
+      description: 'API documentation for Admin backend',
     },
     servers: [
       {

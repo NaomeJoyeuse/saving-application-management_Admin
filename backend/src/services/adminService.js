@@ -64,7 +64,7 @@ class AdminService {
         },
         {
           model: Device,
-          attributes: ['id', 'deviceId', 'status', 'createdAt'],
+          attributes: ['id', 'deviceId', 'isVerified', 'createdAt'],
         },
       ],
       attributes: ['id', 'fullName', 'email', 'createdAt'],
