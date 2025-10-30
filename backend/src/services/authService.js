@@ -29,32 +29,7 @@ class AdminService {
     };
   }
  
-  static async verifyDevice({ deviceId }) {
-    const device = await Device.findOne({ where: { deviceId } });
-    if (!device) {
-      throw new AppError(404, 'Device not found');
-    }
-
-    if (device.isVerified) {
-      throw new AppError(400, 'Device already verified');
-    }
-
-    device.isVerified = true;
-    device.verifiedAt = new Date();
-    await device.save();
-
-    return {
-      message: `Device ${deviceId} verified successfully`,
-      device: {
-        id: device.id,
-        userId: device.userId,
-        deviceId: device.deviceId,
-        isVerified: device.isVerified,
-        verifiedAt: device.verifiedAt,
-      },
-    };
-  }
-
+  
 }
 
 module.exports = AdminService;
