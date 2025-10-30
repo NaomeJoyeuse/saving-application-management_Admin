@@ -3,7 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const dotenv = require('dotenv');
-
+const swaggerDocs = require('./swagger');
 dotenv.config();
 
 const authRoutes = require('./routes/adminRoutes');
@@ -43,6 +43,7 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/admin', authRoutes);
 
+swaggerDocs(app);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Route not found' });
@@ -54,7 +55,7 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📝 Environment: ${NODE_ENV}`);
-  console.log(`🔗 API Health: http://localhost:${PORT}/api/health`);
+  console.log(`🔗 API Documentations: http://localhost:${PORT}/api-docs`);
 });
 
 module.exports = app;
