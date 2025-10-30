@@ -1,8 +1,8 @@
 const AdminService = require('../services/authService');
 const { AppError } = require('../middleware/errorhandling');
 
-class AdminController {
-  // POST /admin/login
+class AdminAuthenticatioController {
+ 
   static async login(req, res, next) {
     try {
       const { email, password } = req.body;
@@ -14,16 +14,8 @@ class AdminController {
     }
   }
 
-  // PATCH /admin/device/verify
-  static async verifyDevice(req, res, next) {
-    try {
-      const { deviceId } = req.body;
-      const result = await AdminService.verifyDevice({ deviceId });
-      res.status(200).json(result);
-    } catch (error) {
-      next(error);
-    }
-  }
+ 
+ 
 
   // GET /admin/customers
   static async getAllCustomers(req, res, next) {
@@ -36,4 +28,4 @@ class AdminController {
   }
 }
 
-module.exports = AdminController;
+module.exports = AdminAuthenticatioController;

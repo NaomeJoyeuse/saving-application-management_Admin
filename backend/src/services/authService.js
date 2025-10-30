@@ -55,29 +55,6 @@ class AdminService {
     };
   }
 
-  // Optional: Get all users with accounts and balances
-  static async getAllCustomers() {
-    const users = await User.findAll({
-      include: [
-        {
-          model: Account,
-          attributes: ['id', 'balance', 'accountNumber'],
-          include: [
-            {
-              model: Transaction,
-              attributes: ['id', 'type', 'amount', 'balanceBefore', 'balanceAfter', 'createdAt'],
-            },
-          ],
-        },
-        {
-          model: Device,
-          attributes: ['deviceId', 'isVerified', 'verifiedAt'],
-        },
-      ],
-    });
-
-    return users;
-  }
 }
 
 module.exports = AdminService;
