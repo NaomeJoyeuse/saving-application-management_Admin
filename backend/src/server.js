@@ -52,7 +52,7 @@ app.use((req, res) => {
 
 app.use(errorHandler);
 
-// ==================== START SERVER ====================
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📝 Environment: ${NODE_ENV}`);
