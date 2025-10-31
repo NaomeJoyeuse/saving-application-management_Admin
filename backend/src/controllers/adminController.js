@@ -53,17 +53,7 @@ class AdminController {
     }
   }
 
-    static async verifyDevice(req, res, next) {
-    try {
-      const { deviceId } = req.params;
-      const { status } = req.body;
-
-      const updated = await adminService.verifyDevice(deviceId, status);
-      res.status(200).json({ success: true, message: 'Device updated', data: updated });
-    } catch (error) {
-      next(error);
-    }
-  }
+  
 }
 
 module.exports = AdminController;

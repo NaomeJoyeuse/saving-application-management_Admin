@@ -20,7 +20,7 @@ export default function AdminLayout({ children }) {
       <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Top Bar */}
+        
         <header className="bg-white border-b border-slate-200 px-6 py-4">
           <div className="flex items-center justify-between">
             <button
@@ -41,7 +41,6 @@ export default function AdminLayout({ children }) {
           </div>
         </header>
 
-        {/* Main Content */}
         <main className="flex-1 overflow-y-auto p-6">
           {children}
           <Outlet />

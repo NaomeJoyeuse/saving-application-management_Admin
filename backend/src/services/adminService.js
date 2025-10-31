@@ -94,15 +94,7 @@ class AdminService {
     });
   }
 
-  async verifyDevice(deviceId, status) {
-    const device = await Device.findByPk(deviceId);
-    if (!device) throw new Error('Device not found');
 
-    device.status = status; // "VERIFIED" or "REJECTED"
-    await device.save();
-
-    return device;
-  }
 }
 
 module.exports = AdminService;

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const axiosInstance = axios.create({
-  baseURL: `${process.env.REACT_APP_API_BASE_URL || 'http://localhost:5001'}/api`,
+  baseURL: `${process.env.REACT_APP_API_BASE_URL}/api`,
   
 });
 
@@ -28,7 +28,7 @@ axiosInstance.interceptors.response.use(
       console.error('Unauthorized, redirecting to login...');
       localStorage.removeItem('accessToken');
       localStorage.removeItem('admin');
-      window.location.href = '/login';
+      window.location.href = '/';
     }
     return Promise.reject(error);
   }

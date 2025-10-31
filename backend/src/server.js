@@ -14,6 +14,10 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 app.use(helmet());
 app.use(
   cors({
@@ -28,9 +32,6 @@ const limiter = rateLimit({
   message: 'Too many requests, please try again later',
 });
 app.use('/api/', limiter);
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/api/health', (req, res) => {

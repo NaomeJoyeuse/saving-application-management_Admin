@@ -146,4 +146,5 @@ router.get('/transactions',AdminController.getAllTransactions);
 
 router.get('/devices', AdminController.getAllDevices);
 
+
 module.exports = router;

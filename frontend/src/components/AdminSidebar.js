@@ -31,7 +31,7 @@ export default function AdminSidebar({ isOpen, onClose }) {
           lg:translate-x-0 lg:static
         `}
       >
-        {/* Header */}
+     
         <div className="flex items-center justify-between p-6 border-b border-slate-800">
           <div>
             <h2 className="text-xl font-bold text-emerald-400">Savings Management System</h2>
@@ -42,7 +42,6 @@ export default function AdminSidebar({ isOpen, onClose }) {
           </button>
         </div>
 
-        {/* Navigation */}
         <nav className="p-4 space-y-2">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -66,7 +65,6 @@ export default function AdminSidebar({ isOpen, onClose }) {
           })}
         </nav>
 
-        {/* Footer */}
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-800">
           <div className="flex items-center gap-3 px-4 py-3">
             <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center">

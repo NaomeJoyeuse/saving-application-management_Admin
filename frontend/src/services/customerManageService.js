@@ -41,7 +41,8 @@ const CustomerService = {
   verifyDevice: async (deviceId, status) => {
     try {
       const response = await axiosInstance.patch(`/admin/device/verify`, { deviceId, status });
-      return response.data.data;
+    //   return response.data.data;
+      return response.data.device;
     } catch (error) {
       throw error.response?.data?.message || 'Failed to update device status';
     }
